@@ -2,7 +2,7 @@ import mysql.connector
 import re
 import csv
 import time
-import os 
+import os
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 start_time = time.time()
@@ -40,6 +40,7 @@ while i < 15:
 
       for line in csv_reader:
           telefones_csv.append(line[0])
+  csv_file.close()
 
   caminho = "files/outputs/numeros-achados-"
 
@@ -52,5 +53,6 @@ while i < 15:
           id = x[0]
           if numero in telefones_csv:
             csv_writer.writerow({'id_cliente': id, 'telefone': numero})
+  csv_file.close()
   print("--- %s segundos ---" % round(time.time() - start_time, 2))
   i += 1

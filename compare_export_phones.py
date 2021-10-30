@@ -7,10 +7,10 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 start_time = time.time()
 
-host = os.getenv('HOST_DB')
-user = os.getenv('USER')
+host = os.getenv('HOST_DB_SITE')
+user = os.getenv('USER_SITE')
 pwd = os.getenv('PWD_DB')
-db = os.getenv('DB')
+db = os.getenv('DB_SITE')
 
 mydb = mysql.connector.connect(
   host=host,
